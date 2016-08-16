@@ -19,12 +19,12 @@ class SerializeClient{
      */
     public static function writeToSerializedFile($file, $data) {
         try {
-            $dataStr = serialize($data);
-            file_put_contents($file, $dataStr);
-        } catch (Exception $e) {
+            $serializedData= serialize($data);
+            file_put_contents($file, $serializedData);
+        } catch (\Exception $e) {
             print "{$e->getMessage()}\n";
         } finally {
-            return $dataStr;
+            return $serializedData;
         }
     }
 
@@ -33,14 +33,13 @@ class SerializeClient{
      * @return mixed|string
      */
     public static function loadFromSerializedFile($file) {
-        $data = '';
         try {
             $dataStr = file_get_contents($file);
-            $data = unserialize($dataStr);
-        } catch (Exception $e) {
+            $serializedData = unserialize($dataStr);
+        } catch (\Exception $e) {
             print "{$e->getMessage()}\n";
         } finally {
-            return $data;
+            return $serializedData;
         }
     }
 }
