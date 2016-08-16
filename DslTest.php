@@ -4,7 +4,6 @@ require_once __DIR__. '/dsl/dsl-autoloader.php';
 date_default_timezone_set('Asia/Tokyo');
 
 // シリアライズ
-/*
 use DataSavingAndLoadingOperation\SerializeClient;
 $file = './serialize-test.txt';
 $data = [
@@ -15,7 +14,7 @@ $data = [
 SerializeClient::writeToSerializedFile($file, $data);
 $data = SerializeClient::loadFromSerializedFile($file);
 var_dump($data);
-*/
+
 // Json
 use DataSavingAndLoadingOperation\JsonClient;
 $file = './json-test.json';
